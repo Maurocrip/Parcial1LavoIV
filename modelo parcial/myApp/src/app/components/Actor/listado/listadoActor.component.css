@@ -1,0 +1,12 @@
+ul{
+    width: 200px;
+    height: 200px;
+    padding: 0;
+}
+li{
+    flex: 0 0 60%;
+    align-items: center;
+    justify-content: center;
+    height: 10% !important ;
+    padding: 0;
+}

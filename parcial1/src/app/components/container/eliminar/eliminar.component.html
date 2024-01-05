@@ -1,0 +1,15 @@
+<div class="detalle" *ngIf="container.id!='';else elseBlock">
+    <label>Contenedor a eliminar:</label>
+    <label>{{container.codigo}}</label>
+    <label>{{container.empresa}}</label>
+    <label>{{container.color}}</label>
+    <label>{{container.capacidad}}</label>
+    <button (click)="Eliminar()">Elimiar</button>
+
+</div>
+
+<ng-template #elseBlock>
+    <div class="detalle">
+        <Label>ELIJA UN PRODUCTO</Label>
+    </div>
+</ng-template>

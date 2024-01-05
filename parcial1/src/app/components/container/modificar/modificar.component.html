@@ -1,0 +1,24 @@
+<div class="detalle" *ngIf="container.id!='';else elseBlock">
+    <label>Modifica el contenedor</label>
+    <div>
+        <label>Empresa</label>
+        <input type="text" [(ngModel)]="container.empresa">
+    </div>
+    <div>
+        <label>Color</label>
+        <input type="text" [(ngModel)]="container.color">
+    </div>
+    <div>
+        <label>Capacidad</label>
+        <input type="number" [(ngModel)]="container.capacidad">
+    </div>
+    <div style="display: flex;flex-direction: column;">
+        <button (click)="Modificar()">Modificar</button>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <div class="detalle">
+        <Label>ELIJA UN PRODUCTO</Label>
+    </div>
+</ng-template>

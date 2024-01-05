@@ -1,0 +1,50 @@
+<main>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-4">PRODUCTOS</span>
+            </a>
+        </header>
+
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <table>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Descripcion</th>
+                        <th>Stock</th>
+                        <th>Comestible</th>
+                        <th>Pais</th>
+                        <th>Precio</th>
+                        <th>Seleccionar</th>
+                    </tr>
+                    <tr *ngFor="let producto of arrayProductos">
+                        <td>{{producto.codigo}}</td>
+                        <td>{{producto.descripcion}}</td>
+                        <td>{{producto.stock}}</td>
+                        <td *ngIf="producto.comestible; else elseBlock">
+                            Si
+                        </td>
+                        <ng-template #elseBlock>
+                           <td>No</td>
+                        </ng-template>
+                        <td>{{producto.pais.name.common}}</td>
+                        <td>{{producto.precio}}</td>
+                        <td>
+                            <button (click)="Mostrar(producto)">Seleccionar</button>    
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <app-detalle-productos [producto] ="producto"></app-detalle-productos>
+            </div>
+            <div class="col-md-6">
+                <app-listado-pais [pais] ="pais"></app-listado-pais>
+            </div>
+        </div>
+    </div>
+</main>

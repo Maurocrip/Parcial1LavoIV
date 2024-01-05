@@ -1,0 +1,12 @@
+<div>
+    <ul class="list-group mb-3">
+      <li class="list-group-item d-flex justify-content-between lh-sm" *ngFor="let actor of arrayActores">
+        <div>
+          <h6 class="my-0">Nombre: {{ actor.nombre }}</h6>
+          <h6 class="my-0">Apelllido: {{ actor.apellido }}</h6>
+          <h6 class="my-0">Pais: {{ actor.pais.name.common }}</h6>
+          <button (click)="PasarActor(actor)">Seleccionar</button>
+        </div>
+      </li>
+      </ul>
+</div>

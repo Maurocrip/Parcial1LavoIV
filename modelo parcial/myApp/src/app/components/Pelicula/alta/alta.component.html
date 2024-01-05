@@ -1,0 +1,86 @@
+<div class="container">
+    <main>
+      <div class="row g-5 py-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Elija un actor: {{pelicula.actor.nombre}}</span>
+          </h4>
+          <app-listado-actor (newItemEvent)="addItem($event)"></app-listado-actor>
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Registrar Pelicula</h4>
+          <form class="needs-validation" [formGroup]="grupo">
+            <div class="row g-3">
+
+              <div class="col-sm-6">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="pelicula.nombre" formControlName="nombre" >
+                <small 
+                *ngIf="
+                grupo.controls['nombre'].errors?.['required'] && 
+                grupo.controls['nombre'].touched 
+                ">
+                  ERROR!! falta Nombre
+                </small>
+              </div>
+  
+              <div class="col-sm-6">
+                <label class="form-label">Tipo</label>
+                <input type="text" class="form-control" id="Tipo" [(ngModel)]="pelicula.tipo" formControlName="tipo">
+                <small 
+                *ngIf="
+                  grupo.controls['tipo'].errors?.['required'] && 
+                  grupo.controls['tipo'].touched
+                ">
+                  ERROR!! falta tipo
+                </small>
+              </div>
+  
+              <div class="col-12">
+                <label  class="form-label">fecha de estreno</label>
+                  <input type="date" class="form-control" id="fecha de estreno" [(ngModel)]="pelicula.fechaEstreno" formControlName="fecha">
+                  <small 
+                *ngIf="
+                  grupo.controls['fecha'].errors?.['required'] && 
+                  grupo.controls['fecha'].touched
+                ">
+                  ERROR!! Elija una fehca
+                </small>
+              </div>
+  
+              <div class="col-12">
+                <label class="form-label">foto</label>
+                <div>
+                  <input type="file" (change)="GuardarImagen($event)" [(ngModel)]="pelicula.fotoPelicula" formControlName="foto" accept=".png, .jpg">
+                  <small 
+                  *ngIf="
+                    grupo.controls['foto'].errors?.['required'] && 
+                    grupo.controls['foto'].touched
+                  ">
+                    ERROR!! elija una foto
+                  </small>
+                </div>
+                
+              </div>
+  
+              <div class="col-12">
+                <label class="form-label"> Cantidad de personas</label>
+                <input type="number" class="form-control" id="cantidadPersonas" [(ngModel)]="pelicula.cantidadPersonas" formControlName="cantidadPersonas">
+                <small 
+                *ngIf="
+                  grupo.controls['cantidadPersonas'].errors?.['required'] && 
+                  grupo.controls['cantidadPersonas'].touched
+                ">
+                  ERROR!! Elija la cantidad de personas que hay para la pelicula
+                </small>
+              </div>
+
+            </div>
+            <button class="w-100 btn btn-primary btn-lg" (click)="Guardar()">Continuar para registrar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+

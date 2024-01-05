@@ -1,0 +1,18 @@
+<div class="detalle" *ngIf="producto.codigo != ''; else elseBlock">
+    <label>Codigo: {{producto.codigo}}</label>
+    <label>Descripcion:  {{producto.descripcion}}</label>
+    <label>Stock:  {{producto.stock}}</label>
+    <label *ngIf="producto.comestible; else elseBlock">
+        Es comestible
+    </label>
+    <ng-template #elseBlock>
+       <label>No es comestible</label>
+    </ng-template>
+    <label>Precio:  {{producto.precio}}</label>
+</div>
+  
+<ng-template #elseBlock>
+    <div class="detalle">
+        <Label>ELIJA UN PRODUCTO</Label>
+    </div>
+</ng-template>

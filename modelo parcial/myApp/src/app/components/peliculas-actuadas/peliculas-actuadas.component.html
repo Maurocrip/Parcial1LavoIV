@@ -1,0 +1,9 @@
+
+<div *ngIf="mostrar">
+    <ul *ngFor="let pelicula of arrayPeliculas">
+        <li>Nombre: {{pelicula.nombre}}</li>
+        <li>Tipo: {{pelicula.tipo}}</li>
+        <li>Cantidad de personas: {{pelicula.cantidadPersonas}}</li>
+        <li>Estreno: {{pelicula.fechaEstreno}}</li>
+    </ul>
+</div>

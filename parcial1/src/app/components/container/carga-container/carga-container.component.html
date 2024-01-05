@@ -1,0 +1,80 @@
+<div class="table-responsive">
+    <table class="table text-center">
+     <tr>
+        <th>Codigo</th>
+        <th>Color</th>
+        <th>Empresa</th>
+        <th>Capasidad</th>
+        <th>Agregar productos</th>
+     </tr>
+     <tr *ngFor="let container of arrayContainer">
+        <td>{{container.codigo}}</td>
+        <td>{{container.color}}</td>
+        <td>{{container.empresa}}</td>
+        <td>{{container.capacidad}}</td>
+        <td><button (click)="Seleccionar(container)">Agregar</button></td>
+     </tr>
+    </table>
+
+    <div class="fondo" *ngIf="mostrar">
+        <div class="centro">
+            <div class="formulario">
+                <main>
+                    <div class="container py-4">
+                        <header class="pb-3 mb-4 border-bottom">
+                            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                                <span class="fs-4">PRODUCTOS</span>
+                            </a>
+                        </header>
+                
+                        <div class="p-5 mb-4 bg-light rounded-3">
+                            <div class="container-fluid py-5">
+                                <table>
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Descripcion</th>
+                                        <th>Stock</th>
+                                        <th>Comestible</th>
+                                        <th>Pais</th>
+                                        <th>Precio</th>
+                                        <th>Seleccionar</th>
+                                    </tr>
+                                    <tr *ngFor="let producto of arrayProductos">
+                                        <td>{{producto.codigo}}</td>
+                                        <td>{{producto.descripcion}}</td>
+                                        <td>{{producto.stock}}</td>
+                                        <td *ngIf="producto.comestible; else elseBlock">
+                                            Si
+                                        </td>
+                                        <ng-template #elseBlock>
+                                           <td>No</td>
+                                        </ng-template>
+                                        <td>{{producto.pais.name.common}}</td>
+                                        <td>{{producto.precio}}</td>
+                                        <td><button class="Volver" (click)="ProductoSelec(producto)">Agregar</button></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <button class="Volver" (click)="Volver()">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fondo" *ngIf="agregar">
+        <div class="centro">
+            <div class="titulo">
+                <label>Seleccione la cantidad</label>
+            </div>
+            <div class="formulario">
+                <input type="number" #cantidad min="0" max={{producto.stock}}>
+                <button class="Volver" (click)="VolverProducto()">Volver</button>
+                <button class="Volver" (click)="Agregar()">Agregar</button>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>

@@ -1,0 +1,28 @@
+<form class="needs-validation" [formGroup]="grupo">
+    <div class="col-sm-6">
+        <label for="firstName" class="form-label">Usuario</label>
+        <input type="text" class="form-control" name="Usuario" [(ngModel)]="usuario.nombre" formControlName="usuario">
+        <small 
+                *ngIf="
+                grupo.controls['usuario'].errors?.['required'] && 
+                grupo.controls['usuario'].touched 
+                ">
+                  ERROR!! falta usuario
+                </small>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="lastName" class="form-label">Contraseña</label>
+        <input  type="password" class="form-control" name="pass" [(ngModel)]="usuario.pass" formControlName="contra">
+        <small 
+                *ngIf="
+                grupo.controls['contra'].errors?.['required'] && 
+                grupo.controls['contra'].touched 
+                ">
+                  ERROR!! falta Contraseña
+        </small>
+      </div>
+      <button class="btn btn-primary btn-lg" (click)="Guardar()">Continuar para registrar</button>
+      <button class="btn btn-primary btn-lg" (click)="Admin()">Llenar admin</button>
+      <button class="btn btn-primary btn-lg" (click)="Empleado()">Llenar empleado</button>
+</form>

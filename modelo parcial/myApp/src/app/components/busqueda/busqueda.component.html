@@ -1,0 +1,10 @@
+<div class="mitad">
+    <div class="tabla">
+        <app-tabla-pelicula (newItemEvent)="PeliculaSeleccionada($event)"></app-tabla-pelicula>
+    </div>
+</div>
+<div class="detalle" >
+    <app-detalle-pelicula [pelicula] = "peliculaSelec" [mostrar]= "mostrar"></app-detalle-pelicula>
+</div>
+
+    

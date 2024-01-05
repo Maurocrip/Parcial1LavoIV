@@ -1,0 +1,11 @@
+<div class="mitad">
+    <div class="tabla">
+        <app-tabla-actores (newItemEvent)="ActorSeleccionado($event)"></app-tabla-actores>
+    </div>
+</div>
+<div>
+    <app-peliculas-actuadas  class="pelicula" [mostrar]="mostrarPe" [arrayPeliculas]="arayPeliculasActuadas" ></app-peliculas-actuadas>
+    <app-detalle-pais class="pelicula" [mostrar]="mostrarPa" [pais]="pais" ></app-detalle-pais>
+    <app-detalle-actor class="pelicula" [mostrar]="mostrarDe" [actor]="actor" ></app-detalle-actor>
+</div>
+

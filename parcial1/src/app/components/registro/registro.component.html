@@ -1,0 +1,42 @@
+<div class="fondo">
+    <div class="centro">
+        <form class="formulario" [formGroup]="formGroup">
+
+            <div class="opcion">
+                <label>Email</label>
+                <input type="email" formControlName="email" [(ngModel)]="git.usuario.nombre">
+                <small 
+                *ngIf="
+                formGroup.controls['email'].errors?.['required'] && 
+                formGroup.controls['email'].touched 
+                ">
+                  falta email
+                </small>
+                <small 
+                *ngIf="
+                formGroup.controls['email'].errors?.['email'] && formGroup.controls['email'].touched 
+                ">
+                    Su email debe incluir "&#64;" y no terminar en "."
+                </small>
+            </div>
+
+            <div class="opcion">
+                <label>Contraseña</label>
+                <input type="password" formControlName="contraseña" [(ngModel)]="git.usuario.pass">
+                <small 
+                *ngIf="
+                formGroup.controls['contraseña'].errors?.['required'] && 
+                formGroup.controls['contraseña'].touched 
+                ">
+                  falta contraseña
+                </small>
+            </div>
+
+        </form>
+        <div>
+            <div class="boton">
+                <button (click)="Registrarse()">registrarse</button>
+            </div>
+        </div>
+    </div>
+</div>

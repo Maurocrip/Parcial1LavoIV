@@ -1,0 +1,98 @@
+<div class="container">
+    <main>
+      <div class="row g-5 py-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Elija un pais: {{paisNombre}}</span>
+          </h4>
+          <app-tabla-paises  (newItemEvent)="addItem($event)"></app-tabla-paises>
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Registrar Actor</h4>
+          <form class="needs-validation" [formGroup]="grupo">
+            <div class="row g-3">
+
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="actor.nombre" formControlName="nombre" >
+                <small 
+                *ngIf="
+                grupo.controls['nombre'].errors?.['required'] && 
+                grupo.controls['nombre'].touched 
+                ">
+                  ERROR!! falta Nombre
+                </small>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="Apellido" [(ngModel)]="actor.apellido" formControlName="apellido">
+                <small 
+                *ngIf="
+                  grupo.controls['apellido'].errors?.['required'] && 
+                  grupo.controls['apellido'].touched
+                ">
+                  ERROR!! falta apellido
+                </small>
+              </div>
+  
+              <div class="col-12">
+                <label for="username" class="form-label">Usuario</label>
+                  <input type="text" class="form-control" id="usuario" [(ngModel)]="actor.usuario" formControlName="usuario">
+                  <small 
+                *ngIf="
+                  grupo.controls['usuario'].errors?.['required'] && 
+                  grupo.controls['usuario'].touched
+                ">
+                  ERROR!! falta usuario
+                </small>
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="actor.email" formControlName="email">
+                <small 
+                *ngIf="
+                  grupo.controls['email'].errors?.['required'] && 
+                  grupo.controls['email'].touched
+                ">
+                  ERROR!! falta email
+                </small>
+                <small 
+                *ngIf="grupo.controls['email'].errors?.['email']">
+                  ERROR!! El mail no tiene su formato
+                </small>
+              </div>
+  
+              <div class="col-12">
+                <label for="address" class="form-label">Direccion</label>
+                <input type="text" class="form-control" id="direccion" [(ngModel)]="actor.direccion" formControlName="direccion">
+                <small 
+                *ngIf="
+                  grupo.controls['direccion'].errors?.['required'] && 
+                  grupo.controls['direccion'].touched
+                ">
+                  ERROR!! falta direccion
+                </small>
+              </div>
+  
+              <div class="col-12">
+                <label for="zip" class="form-label">Zip</label>
+                <input type="number" class="form-control" id="zip" [(ngModel)]="actor.zip" formControlName="zip">
+                <small 
+                *ngIf="
+                  grupo.controls['zip'].errors?.['required'] && 
+                  grupo.controls['zip'].touched
+                ">
+                  ERROR!! falta zip
+                </small>
+              </div>
+
+            </div>
+            <button class="w-100 btn btn-primary btn-lg" (click)="Guardar()">Continuar para registrar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>

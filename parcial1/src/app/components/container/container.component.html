@@ -1,0 +1,44 @@
+
+  
+<div class="container py-3">
+    <main>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <app-crear></app-crear>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <app-modificar [container] ="container" (newItemEvent)="Evento()"></app-modificar>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+           <app-eliminar [container] ="container" (newItemEvent)="Evento()"></app-eliminar>
+          </div>
+        </div>
+      </div>
+  
+      <div class="table-responsive">
+        <table class="table text-center">
+         <tr>
+            <th>Codigo</th>
+            <th>Color</th>
+            <th>Empresa</th>
+            <th>Capasidad</th>
+            <th>Seleccionar</th>
+         </tr>
+         <tr *ngFor="let container of arrayContainer">
+            <td>{{container.codigo}}</td>
+            <td>{{container.color}}</td>
+            <td>{{container.empresa}}</td>
+            <td>{{container.capacidad}}</td>
+            <td><button (click)="Seleccionar(container)">Este</button></td>
+         </tr>
+        </table>
+      </div>
+    </main>  
+  
+</div>
+  

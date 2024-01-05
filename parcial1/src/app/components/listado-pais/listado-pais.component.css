@@ -1,0 +1,9 @@
+.detalle
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px;
+    background: #f2c7c7;
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "modeloparcial-12d0e": {
+      "hosting": {
+        "myApp": [
+          "modeloparcial-12d0e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "modeloparcial-12d0e"
+  }
+}

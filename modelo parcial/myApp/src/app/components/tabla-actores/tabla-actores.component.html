@@ -1,0 +1,19 @@
+
+<div>
+    <table>
+     <tr>
+         <th>Nombre</th>
+         <th>Pais</th>
+         <th>Ver peliculas hechas</th>
+         <th>Detalle del pais</th>
+         <th>Detalle del actor</th>
+     </tr>
+     <tr *ngFor="let actor of arrayActores">
+         <td>{{actor.nombre}} {{actor.apellido}}</td>
+         <td>{{actor.pais.name.common}}</td>
+         <td><button (click)="VerPeliculas(actor, 'peliculas')">Seleccionar</button>
+         <td><button (click)="DetallePais(actor.pais,'pais')">Seleccionar</button>
+         <td><button (click)="DetalleActor(actor,'actor')">Seleccionar</button>
+     </tr>
+    </table>
+ </div>

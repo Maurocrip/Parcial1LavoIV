@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "parcial1labo4"
+  },
+  "targets": {
+    "parcial1labo4": {
+      "hosting": {
+        "parcial1": [
+          "parcial1labo4"
+        ]
+      }
+    }
+  }
+}

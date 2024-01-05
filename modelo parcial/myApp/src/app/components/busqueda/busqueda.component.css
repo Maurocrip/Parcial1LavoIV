@@ -1,0 +1,11 @@
+.tabla{
+    background-color: rgb(255, 243, 202);
+}
+.detalle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body{
+    background-color: rgb(7, 7, 7);
+}

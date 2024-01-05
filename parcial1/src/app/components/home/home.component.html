@@ -1,0 +1,48 @@
+<div class="container">
+    <main>
+      <div class="row g-5 py-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+          </h4>
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Registrar Actor</h4>
+          <form class="needs-validation">
+            <div class="row g-3">
+
+             <div class="col-sm-6">
+                <label for="firstName" class="form-label">Nombre</label>
+                <input [readOnly]="true" type="text" class="form-control" name="login" [(ngModel)]="login">
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Id</label>
+                <input [readOnly]="true" type="text" class="form-control" name="id" [(ngModel)]="id">
+              </div>
+  
+              <div class="col-12">
+                <label for="username" class="form-label">Usuario: </label>
+                  <label><br> {{html_url}}</label>
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Foto</label>
+                <img src={{avatar_url}}>
+              </div>
+  
+              <div class="col-12">
+                <label for="address" class="form-label">segidores</label>
+                <input [readOnly]="true"  type="number" class="form-control" name="segidores" [(ngModel)]="segidores">
+              </div>
+  
+              <div class="col-12">
+                <label for="zip" class="form-label">siguiendo</label>
+                <input [readOnly]="true" type="number" class="form-control" name="siguiendo" [(ngModel)]="siguiendo">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>

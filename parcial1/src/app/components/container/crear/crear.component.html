@@ -1,0 +1,22 @@
+<div style="background-color: #7cf47c;">
+    <label>Crea un contenedor</label>
+    <div>
+        <label>Codigo</label>
+        <input type="text" [(ngModel)]="contenedor.codigo">
+    </div>
+    <div>
+        <label>Empresa</label>
+        <input type="text" [(ngModel)]="contenedor.empresa">
+    </div>
+    <div>
+        <label>Color</label>
+        <input type="text" [(ngModel)]="contenedor.color">
+    </div>
+    <div>
+        <label>Capacidad</label>
+        <input type="number" [(ngModel)]="contenedor.capacidad">
+    </div>
+    <div style="display: flex;flex-direction: column;">
+        <button (click)="Guardar()">Guardar</button>
+    </div>
+</div>

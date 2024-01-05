@@ -1,0 +1,76 @@
+<div class="container">
+    <main>
+      <div class="row g-5 py-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Elija un pais: {{paisNombre}}</span>
+          </h4>
+          <app-tabla-paises  (newItemEvent)="addItem($event)"></app-tabla-paises>
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Registrar Actor</h4>
+          <form class="needs-validation" [formGroup]="grupo">
+            <div class="row g-3">
+
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">codigo</label>
+                <input type="text" class="form-control" id="codigo" [(ngModel)]="producto.codigo" formControlName="codigo" >
+                <small 
+                *ngIf="
+                grupo.controls['codigo'].errors?.['required'] && 
+                grupo.controls['codigo'].touched 
+                ">
+                  ERROR!! falta codigo
+                </small>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">descripcion</label>
+                <input type="text" class="form-control" id="descripcion" [(ngModel)]="producto.descripcion" formControlName="descripcion">
+                <small 
+                *ngIf="
+                  grupo.controls['descripcion'].errors?.['required'] && 
+                  grupo.controls['descripcion'].touched
+                ">
+                  ERROR!! falta descripcion
+                </small>
+              </div>
+  
+              <div class="col-12">
+                <label for="username" class="form-label">stock</label>
+                  <input type="number" class="form-control" id="stock" [(ngModel)]="producto.stock" formControlName="stock">
+                  <small 
+                *ngIf="
+                  grupo.controls['stock'].errors?.['required'] && 
+                  grupo.controls['stock'].touched
+                ">
+                  ERROR!! falta stock
+                </small>
+              </div>
+
+  
+              <div class="col-12">
+                <label for="address" class="form-label">comestible</label>
+                <input type="checkbox" class="form-control" id="comestible" name="producto" [(ngModel)]="producto.comestible" (change)="Mostrar()">
+              </div>
+  
+              <div class="col-12">
+                <label for="zip" class="form-label">precio</label>
+                <input type="number" class="form-control" id="precio" [(ngModel)]="producto.precio" formControlName="precio">
+                <small 
+                *ngIf="
+                  grupo.controls['precio'].errors?.['required'] && 
+                  grupo.controls['precio'].touched
+                ">
+                  ERROR!! falta precio
+                </small>
+              </div>
+
+            </div>
+            <button class="w-100 btn btn-primary btn-lg" (click)="Guardar()">Continuar para registrar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>

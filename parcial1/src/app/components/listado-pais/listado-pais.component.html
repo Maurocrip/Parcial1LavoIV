@@ -1,0 +1,11 @@
+<div class="detalle" *ngIf="pais !=null; else elseBlock ">
+    <label>Nombre : {{pais.name.common}}</label>
+    <label>capital : {{pais.capital[0]}}</label>
+    <label>Continente : {{pais.continents[0]}}</label>
+    <img src={{pais.flags.png}} class="img-thumbnail" alt="...">
+</div>
+<ng-template #elseBlock>
+    <div class="detalle">
+        <Label>ELIJA UN PRODUCTO</Label>
+    </div>
+</ng-template>

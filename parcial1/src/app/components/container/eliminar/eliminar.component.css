@@ -1,0 +1,6 @@
+.detalle
+{
+    display: flex;
+    background: #f1a3ae;
+    flex-direction: column;
+}

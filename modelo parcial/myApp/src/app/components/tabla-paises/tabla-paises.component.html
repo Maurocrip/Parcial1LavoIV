@@ -1,0 +1,11 @@
+<div>
+    <ul class="list-group mb-3">
+      <li class="list-group-item d-flex justify-content-between lh-sm" *ngFor="let pais of arrayPaises">
+        <div>
+          <h6 class="my-0">{{ pais.name.common }}</h6>
+          <img src={{pais.flags.png}} class="img-thumbnail" alt="...">
+          <button (click)="PasarPais(pais)">Seleccionar</button>
+        </div>
+      </li>
+      </ul>
+</div>

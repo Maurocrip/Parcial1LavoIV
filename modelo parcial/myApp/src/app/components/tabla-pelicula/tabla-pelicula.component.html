@@ -1,0 +1,24 @@
+
+<div>
+   <table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th style="width: 10%;">Cantidad de personas</th>
+        <th style="width: 13%;">Fecha de estreno</th>
+        <th>Foto</th>
+        <th style="width: 11%;">Seleccionar pelicula</th>
+    </tr>
+    <tr *ngFor="let pelicula of arrayPelis">
+        <td>{{pelicula.Id}}</td>
+        <td>{{pelicula.nombre}}</td>
+        <td>{{pelicula.tipo}}</td>
+        <td>{{pelicula.cantidadPersonas}}</td>
+        <td>{{pelicula.fechaEstreno}}</td>
+        <td><img src={{pelicula.fotoPelicula}} width="15%" height="15%"></td>
+        <td><button (click)="PasarPelicula(pelicula)">Seleccionar pelicula</button>
+    </tr>
+   </table>
+</div>
+
